@@ -9,6 +9,8 @@ int main() {
     }while(length < 1);
 
     int numbers[length];
+    int sorted_numbers[length];
+
     for(int i = 0; i < length; i++) {
         int array_element;
         printf("The %i element is:", i + 1);
@@ -17,13 +19,14 @@ int main() {
         numbers[i] = array_element;
     }
 
-    int sorted_numbers[length];
-
     for(int i = 0; i < length; i++) {
         int n = 0;
         for(int j = 0; j < length; j++) {
             if(numbers[i] > numbers[j])
                 n++;
+        }
+        while(sorted_numbers[n] == numbers[i]) {
+            n++;
         }
         sorted_numbers[n] = numbers[i];
     }
